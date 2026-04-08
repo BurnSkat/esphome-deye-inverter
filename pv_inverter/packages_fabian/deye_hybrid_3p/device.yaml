@@ -1,0 +1,74 @@
+text_sensor:
+  - platform: modbus_controller
+    modbus_controller_id: ${modbus_controller_id}
+    bitmask: 0
+    register_type: holding
+    address: 500
+    raw_encode: HEXBYTES
+    name: "${device_type}-Running Status"
+    lambda: |-
+      uint16_t value = modbus_controller::word_from_hex_str(x, 0);
+      switch (value) {
+        case 0: return std::string("standby");
+        case 1: return std::string("selfcheck");
+        case 2: return std::string("normal");
+        case 3: return std::string("alarm");
+        case 4: return std::string("fault");
+        default: return std::string("----");
+      }
+      return x;
+
+sensor:
+  - platform: modbus_controller
+    modbus_controller_id: ${modbus_controller_id}
+    name: "${device_type}-Warning1"
+    id: warning1
+    register_type: holding
+    address: 553
+    accuracy_decimals: 0
+    value_type: U_WORD
+
+  - platform: modbus_controller
+    modbus_controller_id: ${modbus_controller_id}
+    name: "${device_type}-Warning2"
+    id: warning2
+    register_type: holding
+    address: 554
+    accuracy_decimals: 0
+    value_type: U_WORD
+
+  - platform: modbus_controller
+    modbus_controller_id: ${modbus_controller_id}
+    name: "${device_type}-Warning3"
+    id: warning3
+    register_type: holding
+    address: 555
+    accuracy_decimals: 0
+    value_type: U_WORD
+
+  - platform: modbus_controller
+    modbus_controller_id: ${modbus_controller_id}
+    name: "${device_type}-Error1"
+    id: error1
+    register_type: holding
+    address: 556
+    accuracy_decimals: 0
+    value_type: U_WORD
+
+  - platform: modbus_controller
+    modbus_controller_id: ${modbus_controller_id}
+    name: "${device_type}-Error2"
+    id: error2
+    register_type: holding
+    address: 557
+    accuracy_decimals: 0
+    value_type: U_WORD
+
+  - platform: modbus_controller
+    modbus_controller_id: ${modbus_controller_id}
+    name: "${device_type}-Error3"
+    id: error3
+    register_type: holding
+    address: 558
+    accuracy_decimals: 0
+    value_type: U_WORD
