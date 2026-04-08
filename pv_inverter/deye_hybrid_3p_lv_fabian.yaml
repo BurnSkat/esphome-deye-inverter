@@ -1,0 +1,45 @@
+substitutions:
+  name: deyeesp32
+  friendly_name: "DeyeESP32"
+  device_description: "Esphome component for Deye sun-12k-sg04lp3"
+  modbus_controller_id: sg1334p
+  device_type: deye
+  baud_rate: "9600"
+  default_maximum_battery_charge_current: "140"
+  default_max_sell_power: "12000"
+  default_system_work_mode: "Zero Export To CT"
+  default_solar_sell: "on"
+  default_force_off_grid: "off"
+
+packages:
+  init: !include packages/init.yaml
+  battery: !include packages_fabian/deye_hybrid_3p/battery.yaml
+  gen: !include packages/deye_hybrid_3p/gen.yaml
+  grid: !include packages_fabian/deye_hybrid_3p/grid.yaml
+  load: !include packages_fabian/deye_hybrid_3p/load.yaml
+  work_mode: !include packages_fabian/deye_hybrid_3p/work_mode.yaml
+  device: !include packages_fabian/deye_hybrid_3p/device.yaml
+  inverter: !include packages_fabian/deye_hybrid_3p/inverter.yaml
+  pv: !include packages_fabian/deye_hybrid_3p/pv.yaml
+  tou: !include packages/deye_hybrid_3p/tou.yaml
+  time_sync: !include packages/deye_hybrid_3p/time_sync.yaml
+
+script:
+  - id: set_safe_modbus_registers
+    then:
+      - logger.log:
+          level: INFO
+          format: "Setting safe Modbus register values"
+      - number.set:
+          id: maximum_battery_charge_current
+          value: ${default_maximum_battery_charge_current}
+      - number.set:
+          id: max_sell_power
+          value: ${default_max_sell_power}
+      - select.set:
+          id: system_work_mode
+          option: ${default_system_work_mode}
+      - switch.turn_${default_solar_sell}:
+          id: switch_solar_sell
+      - switch.turn_${default_force_off_grid}:
+          id: switch_off_grid
