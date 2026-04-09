@@ -13,58 +13,66 @@
 # limitations under the License.
 
 substitutions:
-  update_interval: 10s
+  update_interval: 5s
 
 esphome:
-  name: ${name}
-  friendly_name: ${friendly_name}
-  comment: ${device_description}
-
-esp32:
-  board: esp32-s2-saola-1
-  framework:
-    type: esp-idf
+  name: "${name}"
+  friendly_name: "${friendly_name}"
+  comment: "${device_description} by Lewa-Reka https://github.com/Lewa-Reka/esphome-deye-inverter"
+  project:
+    name: "lewa-reka.deye-inverter"
+    version: "0.12.0"
 
 logger:
+  level: WARN
 
 api:
   encryption:
-    key: "Yb9UXfmHogl+5r4mHuVG+iU+VGPkZE6nSYV1vfhGGJ8="
+    key: ${api_key}
+  on_client_disconnected:
+    - delay: ${safe_mode_delay}
+    - if:
+        condition:
+          not: api.connected
+        then:
+          - logger.log: "Lost connection to HomeAssistant API - Activating safe mode"
+          - script.execute: set_safe_modbus_registers
+
+  on_client_connected:
+    - logger.log: "Connection to HomeAssistant API restored"
 
 ota:
   - platform: esphome
-    password: "685ec1f8a89c006d3fb1cfb6ee1da4f8"
+    id: ota_esphome
+    password: ${ota_password}
 
 wifi:
-  ssid: !secret wifi_ssid
-  password: !secret wifi_password
+  ssid: ${wifi_ssid}
+  password: ${wifi_password}
 
   ap:
-    ssid: "Deyeesp32 Fallback Hotspot"
-    password: "JT2kuDZF1Wbr"
-
-  manual_ip:
-    static_ip: 192.168.178.59
-    gateway: 192.168.178.1
-    subnet: 255.255.255.0
+    ssid: "${friendly_name} Fallback Hotspot"
+    password: ${fallback_password}
 
 captive_portal:
 
 uart:
-  id: mod_bus
-  tx_pin: 5
-  rx_pin: 16
-  baud_rate: 9600
+  id: modbus_uart
+  baud_rate: ${baud_rate}
   stop_bits: 1
 
 modbus:
-  id: modbus1
+  id: modbus_1
+  uart_id: modbus_uart
 
 modbus_controller:
   - id: ${modbus_controller_id}
-    address: 0x1
-    modbus_id: modbus1
+    address: ${modbus_inverter_address}
+    modbus_id: modbus_1
     setup_priority: -10
+    update_interval: ${update_interval}
+    command_throttle: 60ms
+    offline_skip_updates: 3
 
 debug:
   update_interval: 60s
