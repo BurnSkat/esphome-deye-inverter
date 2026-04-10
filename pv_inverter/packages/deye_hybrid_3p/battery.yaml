@@ -95,6 +95,7 @@ sensor:
     address: 587
     unit_of_measurement: "V"
     device_class: voltage
+    state_class: "measurement"
     accuracy_decimals: 2
     filters:
       - multiply: 0.01
@@ -144,6 +145,7 @@ sensor:
     address: 591
     unit_of_measurement: "A"
     device_class: current
+    state_class: "measurement"
     accuracy_decimals: 2
     filters:
       - multiply: 0.01
