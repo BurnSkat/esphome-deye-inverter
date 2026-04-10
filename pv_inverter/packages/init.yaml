@@ -13,7 +13,7 @@
 # limitations under the License.
 
 substitutions:
-  update_interval: 10s
+  update_interval: 5s
 
 esphome:
   name: "${name}"
