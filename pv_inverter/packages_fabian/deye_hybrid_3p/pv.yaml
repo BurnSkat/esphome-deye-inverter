@@ -71,6 +71,7 @@ sensor:
     address: 676
     unit_of_measurement: "V"
     device_class: voltage
+    state_class: "measurement"
     accuracy_decimals: 1
     filters:
       - multiply: 0.1
@@ -83,6 +84,7 @@ sensor:
     address: 677
     unit_of_measurement: "A"
     device_class: current
+    state_class: "measurement"
     accuracy_decimals: 1
     filters:
       - multiply: 0.1
@@ -95,6 +97,7 @@ sensor:
     address: 678
     unit_of_measurement: "V"
     device_class: voltage
+    state_class: "measurement"
     accuracy_decimals: 1
     filters:
       - multiply: 0.1
@@ -107,6 +110,7 @@ sensor:
     address: 679
     unit_of_measurement: "A"
     device_class: current
+    state_class: "measurement"
     accuracy_decimals: 1
     filters:
       - multiply: 0.1
