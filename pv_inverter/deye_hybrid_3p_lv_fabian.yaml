@@ -1,16 +1,3 @@
-substitutions:
-  name: deyeesp32
-  friendly_name: "DeyeESP32"
-  device_description: "Esphome component for Deye sun-12k-sg04lp3"
-  modbus_controller_id: sg1334p
-  device_type: deye
-  baud_rate: "9600"
-  default_maximum_battery_charge_current: "140"
-  default_max_sell_power: "12000"
-  default_system_work_mode: "Zero Export To CT"
-  default_solar_sell: "on"
-  default_force_off_grid: "off"
-
 packages:
   init: !include packages/init.yaml
   battery: !include packages_fabian/deye_hybrid_3p/battery.yaml
