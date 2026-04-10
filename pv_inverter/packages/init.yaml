@@ -24,7 +24,6 @@ esphome:
     version: "0.12.0"
 
 logger:
-  level: WARN
 
 api:
   encryption:
@@ -71,7 +70,7 @@ modbus_controller:
     modbus_id: modbus_1
     setup_priority: -10
     update_interval: ${update_interval}
-    command_throttle: 60ms
+    command_throttle: 50ms
     offline_skip_updates: 3
 
 debug:
@@ -82,7 +81,7 @@ sensor:
     name: "ESP WiFi Signal"
     id: esp_wifi_signal
     icon: mdi:wifi
-    update_interval: 60s
+    update_interval: 30s
     entity_category: diagnostic
   - platform: uptime
     name: ESP Uptime
