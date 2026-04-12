@@ -126,20 +126,6 @@ sensor:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "${device_type} Battery SoC3"
-    id: battery_soc3
-    register_type: holding
-    address: 589
-    unit_of_measurement: "%"
-    device_class: battery
-    state_class: "measurement"
-    accuracy_decimals: 0
-    value_type: U_WORD
-    disabled_by_default: false
-    icon: "mdi:battery-outline"
-
-  - platform: modbus_controller
-    modbus_controller_id: ${modbus_controller_id}
     name: "${device_type} Battery Corrected Capacity"
     id: battery_corrected_capacity
     register_type: holding
@@ -148,68 +134,6 @@ sensor:
     accuracy_decimals: 0
     value_type: U_WORD
     icon: "mdi:battery"
-
-  - platform: modbus_controller
-    modbus_controller_id: ${modbus_controller_id}
-    name: "${device_type} Battery 2 Voltage"
-    id: battery_2_voltage
-    register_type: holding
-    address: 593
-    unit_of_measurement: "V"
-    device_class: voltage
-    state_class: "measurement"
-    accuracy_decimals: 2
-    filters:
-      - multiply: 0.01
-    value_type: U_WORD
-    disabled_by_default: false
-    icon: "mdi:flash-outline"
-
-  - platform: modbus_controller
-    modbus_controller_id: ${modbus_controller_id}
-    name: "${device_type} Battery 2 Current"
-    id: battery2_current
-    register_type: holding
-    address: 594
-    unit_of_measurement: "A"
-    device_class: current
-    state_class: "measurement"
-    accuracy_decimals: 2
-    filters:
-      - multiply: 0.01
-    value_type: S_WORD
-    disabled_by_default: false
-    icon: "mdi:current-dc"
-
-  - platform: modbus_controller
-    modbus_controller_id: ${modbus_controller_id}
-    name: "${device_type} Battery 2 Power"
-    id: battery_2_power
-    register_type: holding
-    address: 595
-    unit_of_measurement: "W"
-    device_class: power
-    state_class: "measurement"
-    accuracy_decimals: 0
-    value_type: S_WORD
-    disabled_by_default: false
-    icon: "mdi:lightning-bolt-outline"
-
-  - platform: modbus_controller
-    modbus_controller_id: ${modbus_controller_id}
-    name: "${device_type} Battery 2 Temperature"
-    id: battery2_temperature
-    register_type: holding
-    address: 596
-    unit_of_measurement: "°C"
-    device_class: temperature
-    state_class: "measurement"
-    accuracy_decimals: 1
-    filters:
-      - multiply: 0.1
-    value_type: U_WORD
-    disabled_by_default: false
-    icon: "mdi:thermometer-lines"
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
