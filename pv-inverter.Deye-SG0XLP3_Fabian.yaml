@@ -1,0 +1,46 @@
+substitutions:
+  name: deyeesp32
+  friendly_name: DeyeESP32
+  device_description: "Esphome component for Deye sun-12k-sg04lp3"
+  modbus_controller_id: sg1334p
+  device_type: deye
+
+  api_key: !secret api_key_deye
+  ota_password: !secret ota_password_deye
+  wifi_ssid: !secret wifi_ssid
+  wifi_password: !secret wifi_password
+  fallback_password: !secret fallback_password_deye
+
+  baud_rate: "9600"
+  modbus_inverter_address: "0x01"
+  safe_mode_delay: "30s"
+
+  default_maximum_battery_charge_current: "140"
+  default_max_sell_power: "12000"
+  default_system_work_mode: "Zero Export To CT"
+  default_solar_sell: "on"
+  default_force_off_grid: "off"
+
+esp32:
+  board: esp32-s2-saola-1
+  cpu_frequency: 240MHz
+  framework:
+    type: esp-idf
+
+packages:
+  deye_fabian:
+    url: https://github.com/BurnSkat/esphome-deye-inverter
+    ref: main
+    files:
+      - path: pv_inverter/deye_hybrid_3p_lv_fabian.yaml
+    refresh: 10min
+
+wifi:
+  manual_ip:
+    static_ip: 192.168.178.59
+    gateway: 192.168.178.1
+    subnet: 255.255.255.0
+
+uart:
+  tx_pin: 5
+  rx_pin: 16
