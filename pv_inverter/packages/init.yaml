@@ -71,6 +71,8 @@ modbus_controller:
     command_throttle: 60ms
     offline_skip_updates: 3
 
+logger:
+
 debug:
   update_interval: 60s
 
