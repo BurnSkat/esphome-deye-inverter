@@ -22,9 +22,7 @@ esphome:
   project:
     name: "lewa-reka.deye-inverter"
     version: "0.12.0"
-
-logger:
-
+    
 api:
   encryption:
     key: ${api_key}
