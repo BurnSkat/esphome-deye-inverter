@@ -20,8 +20,8 @@ esphome:
   friendly_name: "${friendly_name}"
   comment: "${device_description} https://github.com/BurnSkat/esphome-deye-inverter"
   project:
-    name: "lewa-reka.deye-inverter"
-    version: "0.12.0"
+    name: "BurnSkat.deye-inverter"
+    version: "1.0"
     
 api:
   encryption:
@@ -81,7 +81,7 @@ sensor:
     name: "ESP WiFi Signal"
     id: esp_wifi_signal
     icon: mdi:wifi
-    update_interval: 30s
+    update_interval: 60s
     entity_category: diagnostic
   - platform: uptime
     name: ESP Uptime
