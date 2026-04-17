@@ -33,7 +33,7 @@ packages:
     ref: main
     files:
       - path: pv_inverter/deye_hybrid_3p_lv_fabian.yaml
-    refresh: 10min
+    refresh: 12h
 
 wifi:
   manual_ip:
