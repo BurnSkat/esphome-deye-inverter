@@ -56,7 +56,7 @@ sensor:
     device_class: power
     state_class: "measurement"
     accuracy_decimals: 0
-    update_interval: 5s
+    update_interval: 10s
     lambda: |-
       float pv1 = isnan(id(pv1_power).state) ? 0.0 : id(pv1_power).state;
       float pv2 = isnan(id(pv2_power).state) ? 0.0 : id(pv2_power).state;
