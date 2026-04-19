@@ -72,6 +72,7 @@ modbus_controller:
     offline_skip_updates: 3
 
 logger:
+  level: VERBOSE
 
 debug:
   update_interval: 60s
