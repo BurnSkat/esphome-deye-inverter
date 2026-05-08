@@ -15,7 +15,7 @@ substitutions:
   modbus_inverter_address: "0x01"
   safe_mode_delay: "30s"
 
-  default_maximum_battery_charge_current: "140"
+  default_maximum_battery_charge_current: "100"
   default_max_sell_power: "12000"
   default_system_work_mode: "Zero Export To CT"
   default_solar_sell: "on"
