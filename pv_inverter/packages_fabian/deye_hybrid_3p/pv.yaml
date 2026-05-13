@@ -83,9 +83,9 @@ sensor:
     address: 677
     unit_of_measurement: "A"
     device_class: current
-    accuracy_decimals: 1
+    accuracy_decimals: 2
     filters:
-      - multiply: 0.1
+      - multiply: 0.01
     value_type: U_WORD
 
   - platform: modbus_controller
@@ -107,9 +107,9 @@ sensor:
     address: 679
     unit_of_measurement: "A"
     device_class: current
-    accuracy_decimals: 1
+    accuracy_decimals: 2
     filters:
-      - multiply: 0.1
+      - multiply: 0.01
     value_type: U_WORD
 
   - platform: modbus_controller
