@@ -69,7 +69,7 @@ sensor:
     device_class: temperature
     state_class: "measurement"
     accuracy_decimals: 1
-    skip_updates: 12
+    skip_updates: 60
     value_type: U_WORD
     filters:
       - offset: -1000
