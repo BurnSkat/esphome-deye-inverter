@@ -25,46 +25,6 @@ sensor:
 
   - platform: modbus_controller
     modbus_controller_id: ${modbus_controller_id}
-    name: "${device_type}-PV3 Power"
-    id: pv3_power
-    register_type: holding
-    address: 674
-    unit_of_measurement: "W"
-    device_class: power
-    state_class: "measurement"
-    accuracy_decimals: 0
-    value_type: U_WORD
-    disabled_by_default: true
-
-  - platform: modbus_controller
-    modbus_controller_id: ${modbus_controller_id}
-    name: "${device_type}-PV4 Power"
-    id: pv4_power
-    register_type: holding
-    address: 675
-    unit_of_measurement: "W"
-    device_class: power
-    state_class: "measurement"
-    accuracy_decimals: 0
-    value_type: U_WORD
-    disabled_by_default: true
-
-  - platform: template
-    name: "${device_type}-PV Power"
-    unit_of_measurement: "W"
-    id: pv_power
-    device_class: power
-    state_class: "measurement"
-    accuracy_decimals: 0
-    lambda: |-
-      float pv1 = isnan(id(pv1_power).state) ? 0.0 : id(pv1_power).state;
-      float pv2 = isnan(id(pv2_power).state) ? 0.0 : id(pv2_power).state;
-      float pv3 = isnan(id(pv3_power).state) ? 0.0 : id(pv3_power).state;
-      float pv4 = isnan(id(pv4_power).state) ? 0.0 : id(pv4_power).state;
-      return pv1 + pv2 + pv3 + pv4;
-
-  - platform: modbus_controller
-    modbus_controller_id: ${modbus_controller_id}
     name: "${device_type}-PV1 Voltage"
     register_type: holding
     address: 676
