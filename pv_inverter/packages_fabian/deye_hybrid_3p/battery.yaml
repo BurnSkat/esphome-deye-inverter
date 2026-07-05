@@ -69,6 +69,7 @@ sensor:
     device_class: temperature
     state_class: "measurement"
     accuracy_decimals: 1
+    skip_updates: 12
     value_type: U_WORD
     filters:
       - offset: -1000
@@ -113,6 +114,7 @@ sensor:
     device_class: battery
     state_class: "measurement"
     accuracy_decimals: 0
+    skip_updates: 12
     value_type: U_WORD
 
   - platform: modbus_controller
@@ -125,6 +127,7 @@ sensor:
     device_class: battery
     state_class: "measurement"
     accuracy_decimals: 0
+    skip_updates: 12
     value_type: U_WORD
     icon: "mdi:battery"
 
@@ -136,7 +139,6 @@ sensor:
     address: 592
     unit_of_measurement: "Ah"
     accuracy_decimals: 0
-    skip_updates: 60
     value_type: U_WORD
     icon: "mdi:battery"
 
