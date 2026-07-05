@@ -121,7 +121,7 @@ sensor:
     device_class: energy
     state_class: "total_increasing"
     accuracy_decimals: 1
-    update_interval: 600s
+    skip_updates: 60
     filters:
       - multiply: 0.1
     value_type: U_WORD
@@ -136,7 +136,7 @@ sensor:
     device_class: energy
     state_class: "total_increasing"
     accuracy_decimals: 1
-    update_interval: 600s
+    skip_updates: 60
     value_type: U_DWORD_R
     filters:
       - multiply: 0.1
