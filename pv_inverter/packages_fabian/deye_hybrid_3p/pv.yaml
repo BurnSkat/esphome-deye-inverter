@@ -56,7 +56,6 @@ sensor:
     device_class: power
     state_class: "measurement"
     accuracy_decimals: 0
-    update_interval: 10s
     lambda: |-
       float pv1 = isnan(id(pv1_power).state) ? 0.0 : id(pv1_power).state;
       float pv2 = isnan(id(pv2_power).state) ? 0.0 : id(pv2_power).state;
@@ -122,6 +121,7 @@ sensor:
     device_class: energy
     state_class: "total_increasing"
     accuracy_decimals: 1
+    update_interval: 600s
     filters:
       - multiply: 0.1
     value_type: U_WORD
@@ -136,6 +136,7 @@ sensor:
     device_class: energy
     state_class: "total_increasing"
     accuracy_decimals: 1
+    update_interval: 600s
     value_type: U_DWORD_R
     filters:
       - multiply: 0.1
