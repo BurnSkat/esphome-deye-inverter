@@ -92,7 +92,7 @@ sensor:
     device_class: energy
     state_class: "total_increasing"
     accuracy_decimals: 1
-    update_interval: 600s
+    skip_updates: 60
     value_type: U_WORD
     filters:
       - multiply: 0.1
@@ -106,7 +106,7 @@ sensor:
     unit_of_measurement: "kWh"
     device_class: energy
     state_class: "total_increasing"
-    update_interval: 600s
+    skip_updates: 60
     accuracy_decimals: 1
     value_type: U_WORD
     filters:
@@ -122,7 +122,7 @@ sensor:
     device_class: energy
     state_class: "total_increasing"
     accuracy_decimals: 1
-    update_interval: 600s
+    skip_updates: 60
     value_type: U_DWORD_R
     filters:
       - multiply: 0.1
@@ -137,7 +137,7 @@ sensor:
     device_class: energy
     state_class: "total_increasing"
     accuracy_decimals: 1
-    update_interval: 600s
+    skip_updates: 60
     value_type: U_DWORD_R
     filters:
       - multiply: 0.1
