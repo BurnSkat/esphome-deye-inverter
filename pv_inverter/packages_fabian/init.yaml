@@ -67,8 +67,6 @@ uart:
 modbus:
   id: modbus_1
   uart_id: modbus_uart
-  send_wait_time: 250ms
-  turnaround_time: 100ms
 
 #modbus_controller:
 #  - id: !extend ${modbus_controller_id}
@@ -89,7 +87,6 @@ modbus:
     update_interval: 5s
     command_throttle: 20ms
     offline_skip_updates: 3
-    max_cmd_retries: 1
 
 logger:
   level: INFO
