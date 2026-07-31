@@ -12,8 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-substitutions:
-  update_interval: 5s
+#substitutions:
+#  update_interval: 5s
 
 esphome:
   name: "${name}"
