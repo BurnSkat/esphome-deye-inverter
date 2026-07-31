@@ -59,10 +59,10 @@ uart:
   stop_bits: 1
 
 modbus:
-  id: !extend modbus_1
-  send_wait_time: 250ms
-  turnaround_time: 100ms
-  uart_id: modbus_uart
+  - id: !extend modbus_1
+    send_wait_time: 250ms
+    turnaround_time: 100ms
+    uart_id: modbus_uart
 
 #modbus:
 #  id: modbus_1
