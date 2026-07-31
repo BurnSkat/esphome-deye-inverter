@@ -67,7 +67,8 @@ modbus_controller:
     address: ${modbus_inverter_address}
     modbus_id: modbus_1
     setup_priority: -10
-    update_interval: ${update_interval}
+#    update_interval: ${update_interval}
+    update_interval: 5s
     command_throttle: 20ms
     offline_skip_updates: 3
 
