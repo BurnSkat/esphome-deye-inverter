@@ -78,7 +78,7 @@ modbus:
 #    modbus_id: modbus_1
 #    setup_priority: -10
 
-#modbus_controller:
+modbus_controller:
   - id: ${modbus_controller_id}
     address: ${modbus_inverter_address}
     modbus_id: modbus_1
