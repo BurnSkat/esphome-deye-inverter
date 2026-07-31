@@ -59,8 +59,24 @@ uart:
   stop_bits: 1
 
 modbus:
-  id: modbus_1
-  uart_id: modbus_uart
+  - id: !extend modbus_1
+    send_wait_time: 250ms
+    turnaround_time: 100ms
+    uart_id: modbus_uart
+
+#modbus:
+#  id: modbus_1
+#  uart_id: modbus_uart
+
+#modbus_controller:
+#  - id: !extend ${modbus_controller_id}
+#    update_interval: 5s
+#    max_cmd_retries: 1
+#    command_throttle: 20ms
+#    offline_skip_updates: 3
+#    address: ${modbus_inverter_address}
+#    modbus_id: modbus_1
+#    setup_priority: -10
 
 modbus_controller:
   - id: ${modbus_controller_id}
@@ -73,7 +89,7 @@ modbus_controller:
     offline_skip_updates: 3
 
 logger:
-  level: VERBOSE
+  level: INFO
 
 debug:
   update_interval: 60s
