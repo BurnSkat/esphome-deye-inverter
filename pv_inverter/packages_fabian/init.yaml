@@ -89,7 +89,7 @@ modbus_controller:
     offline_skip_updates: 3
 
 logger:
-  level: INFO
+  level: WARNING
 
 debug:
   update_interval: 60s
