@@ -21,7 +21,7 @@ esphome:
   comment: "${device_description} https://github.com/BurnSkat/esphome-deye-inverter"
   project:
     name: "BurnSkat.deye-inverter"
-    version: "1.0"
+    version: "1.2"
     
 api:
   encryption:
@@ -109,29 +109,29 @@ sensor:
     update_interval: 60s
     entity_category: diagnostic
   - platform: debug
-    free:
-      name: ESP Heap Free
-      id: esp_heap_free
-      icon: mdi:memory
-      entity_category: diagnostic
-    block:
-      name: ESP Heap Max Block
-      id: esp_heap_max_block
-      icon: mdi:memory
-      entity_category: diagnostic
+#  free:
+#     name: ESP Heap Free
+#     id: esp_heap_free
+#     icon: mdi:memory
+#     entity_category: diagnostic
+#   block:
+#     name: ESP Heap Max Block
+#     id: esp_heap_max_block
+#     icon: mdi:memory
+#     entity_category: diagnostic
     loop_time:
       name: ESP Loop Time
       id: esp_loop_time
       icon: mdi:reload
       entity_category: diagnostic
-    cpu_frequency:
-      name: ESP CPU Frequency
-      id: esp_cpu_frequency
-      icon: mdi:cpu-32-bit
-      unit_of_measurement: "MHz"
-      filters:
-        - multiply: 0.000001
-      entity_category: diagnostic
+#   cpu_frequency:
+#     name: ESP CPU Frequency
+#     id: esp_cpu_frequency
+#     icon: mdi:cpu-32-bit
+#     unit_of_measurement: "MHz"
+#     filters:
+#       - multiply: 0.000001
+#     entity_category: diagnostic
 
 text_sensor:
   - platform: wifi_info
