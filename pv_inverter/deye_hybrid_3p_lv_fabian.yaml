@@ -15,7 +15,7 @@ script:
   - id: set_safe_modbus_registers
     then:
       - logger.log:
-          level: INFO
+          level: WARN
           format: "Setting safe Modbus register values"
       - number.set:
           id: maximum_battery_charge_current
