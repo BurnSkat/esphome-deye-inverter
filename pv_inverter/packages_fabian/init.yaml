@@ -67,6 +67,7 @@ uart:
 modbus:
   id: modbus_1
   uart_id: modbus_uart
+  turnaround_time: 20ms
 
 #modbus_controller:
 #  - id: !extend ${modbus_controller_id}
@@ -85,7 +86,6 @@ modbus_controller:
     setup_priority: -10
 #    update_interval: ${update_interval}
     update_interval: 5s
-    command_throttle: 15ms
     offline_skip_updates: 4
 
 logger:
