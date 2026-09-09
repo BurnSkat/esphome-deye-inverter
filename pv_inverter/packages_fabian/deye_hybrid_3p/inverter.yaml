@@ -7,7 +7,7 @@ sensor:
     unit_of_measurement: "°C"
     device_class: temperature
     accuracy_decimals: 1
-    skip_updates: 12
+    skip_updates: 24
     value_type: S_WORD
     filters:
       - offset: -1000
@@ -21,7 +21,7 @@ sensor:
     unit_of_measurement: "°C"
     device_class: temperature
     accuracy_decimals: 1
-    skip_updates: 12
+    skip_updates: 24
     value_type: S_WORD
     filters:
       - offset: -1000
