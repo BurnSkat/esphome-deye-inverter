@@ -9,7 +9,7 @@ sensor:
     device_class: energy
     state_class: "total_increasing"
     accuracy_decimals: 1
-    skip_updates: 60
+    skip_updates: 120
     filters:
       - multiply: 0.1
     value_type: U_WORD
@@ -24,7 +24,7 @@ sensor:
     device_class: energy
     state_class: "total_increasing"
     accuracy_decimals: 1
-    skip_updates: 60
+    skip_updates: 120
     filters:
       - multiply: 0.1
     value_type: U_WORD
@@ -39,7 +39,7 @@ sensor:
     device_class: energy
     state_class: "total_increasing"
     accuracy_decimals: 1
-    skip_updates: 60
+    skip_updates: 120
     value_type: U_DWORD_R
     filters:
       - multiply: 0.1
@@ -54,7 +54,7 @@ sensor:
     device_class: energy
     state_class: "total_increasing"
     accuracy_decimals: 1
-    skip_updates: 60
+    skip_updates: 120
     value_type: U_DWORD_R
     filters:
       - multiply: 0.1
@@ -69,7 +69,7 @@ sensor:
     device_class: temperature
     state_class: "measurement"
     accuracy_decimals: 1
-    skip_updates: 60
+    skip_updates: 120
     value_type: U_WORD
     filters:
       - offset: -1000
@@ -114,7 +114,7 @@ sensor:
     device_class: battery
     state_class: "measurement"
     accuracy_decimals: 0
-    skip_updates: 12
+    skip_updates: 24
     value_type: U_WORD
 
   - platform: modbus_controller
@@ -127,7 +127,7 @@ sensor:
     device_class: battery
     state_class: "measurement"
     accuracy_decimals: 0
-    skip_updates: 12
+    skip_updates: 24
     value_type: U_WORD
     icon: "mdi:battery"
 
