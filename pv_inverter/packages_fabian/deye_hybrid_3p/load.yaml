@@ -32,7 +32,7 @@ sensor:
     device_class: energy
     state_class: "total_increasing"
     accuracy_decimals: 1
-    skip_updates: 60
+    skip_updates: 120
     value_type: U_WORD
     filters:
       - multiply: 0.1
@@ -47,7 +47,7 @@ sensor:
     device_class: energy
     state_class: "total_increasing"
     accuracy_decimals: 1
-    skip_updates: 60
+    skip_updates: 120
     value_type: U_DWORD_R
     filters:
       - multiply: 0.1
