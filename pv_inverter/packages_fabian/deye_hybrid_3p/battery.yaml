@@ -168,6 +168,75 @@ sensor:
       - multiply: 0.01
     value_type: S_WORD
 
+  - platform: modbus_controller
+    modbus_controller_id: ${modbus_controller_id}
+    name: "Battery 2 Voltage"
+    id: battery_2_voltage
+    register_type: holding
+    address: 593
+    unit_of_measurement: "V"
+    device_class: voltage
+    accuracy_decimals: 2
+    filters:
+      - multiply: 0.01
+    value_type: U_WORD
+    disabled_by_default: true
+    icon: "mdi:flash-outline"
+
+  - platform: modbus_controller
+    modbus_controller_id: ${modbus_controller_id}
+    name: "Battery 2 Current"
+    register_type: holding
+    address: 594
+    unit_of_measurement: "A"
+    device_class: current
+    accuracy_decimals: 2
+    filters:
+      - multiply: 0.01
+    value_type: S_WORD
+    disabled_by_default: true
+    icon: "mdi:current-dc"
+
+  - platform: modbus_controller
+    modbus_controller_id: ${modbus_controller_id}
+    name: "Battery 2 Power"
+    id: battery_2_power
+    register_type: holding
+    address: 595
+    unit_of_measurement: "W"
+    device_class: power
+    state_class: "measurement"
+    accuracy_decimals: 0
+    value_type: S_WORD
+    disabled_by_default: true
+    icon: "mdi:lightning-bolt-outline"
+
+  - platform: modbus_controller
+    modbus_controller_id: ${modbus_controller_id}
+    name: "Battery 2 Temperature"
+    register_type: holding
+    address: 596
+    unit_of_measurement: "°C"
+    device_class: temperature
+    accuracy_decimals: 1
+    filters:
+      - multiply: 0.1
+    value_type: U_WORD
+    disabled_by_default: true
+    icon: "mdi:thermometer-lines"
+
+  - platform: modbus_controller
+    modbus_controller_id: ${modbus_controller_id}
+    name: "Battery 2"
+    register_type: holding
+    address: 589
+    unit_of_measurement: "%"
+    device_class: battery
+    accuracy_decimals: 0
+    value_type: U_WORD
+    disabled_by_default: true
+    icon: "mdi:battery-outline"
+
 number:
   - platform: modbus_controller
     use_write_multiple: true
