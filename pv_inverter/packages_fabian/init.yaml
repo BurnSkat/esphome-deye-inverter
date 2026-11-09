@@ -67,8 +67,8 @@ uart:
 modbus:
   id: modbus_1
   uart_id: modbus_uart
-  send_wait_time: 500ms
-  turnaround_time: 30ms
+  send_wait_time: 400ms
+  turnaround_time: 20ms
 
 #modbus_controller:
 #  - id: !extend ${modbus_controller_id}
