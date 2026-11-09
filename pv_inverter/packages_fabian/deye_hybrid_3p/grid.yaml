@@ -11,7 +11,7 @@ sensor:
     value_type: S_WORD
 
   - platform: modbus_controller
-    modbus_controller_id: ${modbus_controller_id}
+    modbus_controller_id: ${modbus_controller_id}_300s
     name: "${device_type}-Daily Energy Bought"
     id: daily_energy_bought
     register_type: holding
@@ -20,13 +20,12 @@ sensor:
     device_class: energy
     state_class: "total_increasing"
     accuracy_decimals: 1
-    update_interval: 300s
     value_type: U_WORD
     filters:
       - multiply: 0.1
 
   - platform: modbus_controller
-    modbus_controller_id: ${modbus_controller_id}
+    modbus_controller_id: ${modbus_controller_id}_300s
     name: "${device_type}-Daily Energy Sold"
     id: daily_energy_sold
     register_type: holding
@@ -34,14 +33,13 @@ sensor:
     unit_of_measurement: "kWh"
     device_class: energy
     state_class: "total_increasing"
-    update_interval: 300s
     accuracy_decimals: 1
     value_type: U_WORD
     filters:
       - multiply: 0.1
 
   - platform: modbus_controller
-    modbus_controller_id: ${modbus_controller_id}
+    modbus_controller_id: ${modbus_controller_id}_300s
     name: "${device_type}-Total Energy Bought"
     id: total_energy_bought
     register_type: holding
@@ -50,13 +48,12 @@ sensor:
     device_class: energy
     state_class: "total_increasing"
     accuracy_decimals: 1
-    update_interval: 300s
     value_type: U_DWORD_R
     filters:
       - multiply: 0.1
 
   - platform: modbus_controller
-    modbus_controller_id: ${modbus_controller_id}
+    modbus_controller_id: ${modbus_controller_id}_300s
     name: "${device_type}-Total Energy Sold"
     id: total_energy_sold
     register_type: holding
@@ -65,7 +62,6 @@ sensor:
     device_class: energy
     state_class: "total_increasing"
     accuracy_decimals: 1
-    update_interval: 300s
     value_type: U_DWORD_R
     filters:
       - multiply: 0.1

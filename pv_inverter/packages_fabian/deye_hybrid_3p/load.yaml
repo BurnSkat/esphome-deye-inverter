@@ -23,7 +23,7 @@ sensor:
     value_type: U_WORD
 
   - platform: modbus_controller
-    modbus_controller_id: ${modbus_controller_id}
+    modbus_controller_id: ${modbus_controller_id}_300s
     name: "${device_type}-Daily Load Consumption"
     id: daily_load_consumption
     register_type: holding
@@ -32,13 +32,12 @@ sensor:
     device_class: energy
     state_class: "total_increasing"
     accuracy_decimals: 1
-    update_interval: 300s
     value_type: U_WORD
     filters:
       - multiply: 0.1
 
   - platform: modbus_controller
-    modbus_controller_id: ${modbus_controller_id}
+    modbus_controller_id: ${modbus_controller_id}_300s
     name: "${device_type}-Total Consumption"
     id: total_consumption
     register_type: holding
@@ -47,7 +46,6 @@ sensor:
     device_class: energy
     state_class: "total_increasing"
     accuracy_decimals: 1
-    update_interval: 300s
     value_type: U_DWORD_R
     filters:
       - multiply: 0.1

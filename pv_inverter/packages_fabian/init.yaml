@@ -85,8 +85,31 @@ modbus_controller:
     address: ${modbus_inverter_address}
     modbus_id: modbus_1
     setup_priority: -10
-#    update_interval: ${update_interval}
+#    update_interval: 5s
     update_interval: ${update_interval}
+    offline_skip_updates: 4
+
+  # Separate polling schedules for rarely changing registers.
+  # All controllers use the same inverter Modbus address and UART.
+  - id: ${modbus_controller_id}_60s
+    address: ${modbus_inverter_address}
+    modbus_id: modbus_1
+    update_interval: 60s
+    offline_skip_updates: 4
+  - id: ${modbus_controller_id}_125s
+    address: ${modbus_inverter_address}
+    modbus_id: modbus_1
+    update_interval: 125s
+    offline_skip_updates: 4
+  - id: ${modbus_controller_id}_300s
+    address: ${modbus_inverter_address}
+    modbus_id: modbus_1
+    update_interval: 300s
+    offline_skip_updates: 4
+  - id: ${modbus_controller_id}_605s
+    address: ${modbus_inverter_address}
+    modbus_id: modbus_1
+    update_interval: 605s
     offline_skip_updates: 4
 
 logger:
